@@ -33,7 +33,12 @@ while key != 27:                                                   # While Esc k
     win.border(0)
     win.addstr(0, 2, 'Score : ' + str(score) + ' ')                # Printing 'Score' and
     win.addstr(0, 27, ' SNAKE ')                                   # 'SNAKE' strings
-    speed = 150 - ((len(snake)/2 )%120)*10
+
+    level = (len(snake)/2 )%120                                    # Le niveau augmente a chaque deux points
+    win.addstr(0, 35, ' Level : ' + str(level) + ' ')               # 'Level' strings
+
+    startSpeed = 150
+    speed = startSpeed - level*10                                  # Augmente 
     win.timeout(speed)                                             # Increases the speed of Snake as its length increases
 
 
