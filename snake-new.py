@@ -16,6 +16,7 @@ win.nodelay(1)
 
 key = KEY_RIGHT                                                    # Initializing values
 score = 0
+level = 1
 
 snake = [[4,10], [4,9], [4,8]]                                     # Initial snake co-ordinates
 food = [10,20]                                                     # First food co-ordinates
@@ -26,6 +27,7 @@ while key != 27:                                                   # While Esc k
     win.border(0)
     win.addstr(0, 2, 'Score : ' + str(score) + ' ')                # Printing 'Score' and
     win.addstr(0, 27, ' SNAKE ')                                   # 'SNAKE' strings
+    win.addstr(0, 35, ' Level : ' + str(level) + '')               # 'SNAKE' strings
     win.timeout(150 - (len(snake)/5 + len(snake)/10)%120)          # Increases the speed of Snake as its length increases
 
     prevKey = key                                                  # Previous key pressed
@@ -78,5 +80,6 @@ while key != 27:                                                   # While Esc k
     win.addch(snake[0][0], snake[0][1], '#')
 
 curses.endwin()
+print("\nGAME OVER")
 print("\nScore - " + str(score))
 print("http://bitemelater.in\n")
