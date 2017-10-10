@@ -42,6 +42,8 @@ while key != 27:                                                   # While Esc k
 
     if key not in [KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_DOWN, 27]:     # If an invalid key is pressed
         key = prevKey
+    if (prevKey in [KEY_LEFT, KEY_RIGHT] and key in [KEY_LEFT, KEY_RIGHT]) or (prevKey in [KEY_UP, KEY_DOWN] and key in [KEY_UP, KEY_DOWN]) :
+        key = prevKey
 
     # Calculates the new coordinates of the head of the snake. NOTE: len(snake) increases.
     # This is taken care of later at [1].
