@@ -20,8 +20,14 @@ level = 1
 
 snake = [[4,10], [4,9], [4,8]]                                     # Initial snake co-ordinates
 food = [10,20]                                                     # First food co-ordinates
+obstacles = [[6,12], [6,13], [6,14]]
+
 
 win.addch(food[0], food[1], '*')                                   # Prints the food
+
+for obstacle in obstacles:
+    win.addch(obstacle[0], obstacle[1], '#')
+
 
 while key != 27:                                                   # While Esc key is not pressed
     win.border(0)
@@ -79,6 +85,9 @@ while key != 27:                                                   # While Esc k
         last = snake.pop()                                          # [1] If it does not eat the food, length decreases
         win.addch(last[0], last[1], ' ')
     win.addch(snake[0][0], snake[0][1], '#')
+
+    if snake[0] == obstacle : break
+    
 
 curses.endwin()
 print("\nGAME OVER")
