@@ -27,6 +27,7 @@ while key != 27:                                                   # While Esc k
     win.border(0)
     win.addstr(0, 2, 'Score : ' + str(score) + ' ')                # Printing 'Score' and
     win.addstr(0, 27, ' SNAKE ')                                   # 'SNAKE' strings
+    win.addstr(0, 35, ' Level : ' + str(level) + '')               # 'Level' strings
     speed = 150 - ((len(snake)/2 )%120)*10
     win.timeout(speed)                                             # Increases the speed of Snake as its length increases
 
