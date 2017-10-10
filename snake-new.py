@@ -42,6 +42,8 @@ while key != 27:                                                   # While Esc k
 
     if key not in [KEY_LEFT, KEY_RIGHT, KEY_UP, KEY_DOWN, 27]:     # If an invalid key is pressed
         key = prevKey
+
+    # Si la touche d'avant est dans le même sens que le mouvement, ne faire rien.
     if (prevKey in [KEY_LEFT, KEY_RIGHT] and key in [KEY_LEFT, KEY_RIGHT]) or (prevKey in [KEY_UP, KEY_DOWN] and key in [KEY_UP, KEY_DOWN]) :
         key = prevKey
 
