@@ -26,7 +26,8 @@ while key != 27:                                                   # While Esc k
     win.border(0)
     win.addstr(0, 2, 'Score : ' + str(score) + ' ')                # Printing 'Score' and
     win.addstr(0, 27, ' SNAKE ')                                   # 'SNAKE' strings
-    win.timeout(150 - (len(snake)/5 + len(snake)/10)%120)          # Increases the speed of Snake as its length increases
+    speed = 150 - ((len(snake)/2 )%120)*10
+    win.timeout(speed)                                             # Increases the speed of Snake as its length increases
 
     prevKey = key                                                  # Previous key pressed
     event = win.getch()
